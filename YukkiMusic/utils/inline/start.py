@@ -145,6 +145,7 @@ async def guide_set(_, query: CallbackQuery):
 /addsudo - اضافة مطور
 /delsudo - حذف مطور
 /reboot - إعادة تشغيل البوت
+/update - للتحديث الملفات
 /speedtest - سرعة الخادم
 /logger [disable | enable] معرفة من يستخدم البوت
 /blacklistchat + معرف القناة او المجموعة لحظرها
