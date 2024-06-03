@@ -35,28 +35,28 @@ from YukkiMusic.utils.inline.playlist import botplaylist_markup
 from YukkiMusic.utils.logger import play_logs
 from YukkiMusic.utils.stream.stream import stream
 from config import SUPPORT_CHANNEL 
-from config import Muntazer
+from config import CHANNEL_SUDO
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, ChatWriteForbidden
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 async def must_join_channel(app, msg):
-    if not Muntazer:
+    if not CHANNEL_SUDO:
         return
     try:
         if msg.from_user is None:
             return
         try:
-            await app.get_chat_member(Muntazer, msg.from_user.id)
+            await app.get_chat_member(CHANNEL_SUDO, msg.from_user.id)
         except UserNotParticipant:
-            if Muntazer.isalpha():
-                link = "https://t.me/" + Muntazer
+            if CHANNEL_SUDO.isalpha():
+                link = "https://t.me/" + CHANNEL_SUDO
             else:
-                chat_info = await app.get_chat(Muntazer)
+                chat_info = await app.get_chat(CHANNEL_SUDO)
                 link = chat_info.invite_link
             try:
                 await msg.reply(
-                    f"~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{Muntazer}.",
+                    f"~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{CHANNEL_SUDO}.",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
                         [InlineKeyboardButton("⦗ قناة الاشتراك ⦘", url=link)]
@@ -66,7 +66,7 @@ async def must_join_channel(app, msg):
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"I m not admin in the MUST_JOIN chat {Muntazer}!")
+        print(f"I m not admin in the MUST_JOIN chat {CHANNEL_SUDO}!")
 
 
 # Command
@@ -681,20 +681,3 @@ async def slider_queries(client, CallbackQuery, _):
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
 
-
-__MODULE__ = "Plᴀʏ"
-__HELP__ = """✅<u>Pʟᴀʏ Cᴏᴍᴍᴀɴᴅs:</u>
-Aᴠᴀɪʟᴀʙʟᴇ Cᴏᴍᴍᴀɴᴅs = play , vplay , cplay
-FᴏʀᴄᴇPʟᴀʏ Cᴏᴍᴍᴀɴᴅs = ᴘʟᴀʏғᴏʀᴄᴇ , ᴠᴘʟᴀʏғᴏʀᴄᴇ , ᴄᴘʟᴀʏғᴏʀᴄᴇ
-
-c sᴛᴀɴᴅs ғᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
-v sᴛᴀɴᴅs ғᴏʀ ᴠɪᴅᴇᴏ ᴘʟᴀʏ.
-force sᴛᴀɴᴅs ғᴏʀ ғᴏʀᴄᴇ ᴘʟᴀʏ.
-
-/play ᴏʀ /vplay ᴏʀ /cplay  - Bᴏᴛ ᴡɪʟʟ sᴛᴀʀᴛ ᴘʟᴀʏɪɴɢ ʏᴏᴜʀ ɢɪᴠᴇɴ ǫᴜᴇʀʏ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴏʀ Sᴛʀᴇᴀᴍ ʟɪᴠᴇ ʟɪɴᴋs ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs.
-
-/playforce ᴏʀ /vplayforce ᴏʀ /cplayforce -  Fᴏʀᴄᴇ Pʟᴀʏ sᴛᴏᴘs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴘʟᴀʏɪɴɢ ᴛʀᴀᴄᴋ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴛᴀʀᴛs ᴘʟᴀʏɪɴɢ ᴛʜᴇ sᴇᴀʀᴄʜᴇᴅ ᴛʀᴀᴄᴋ ɪɴsᴛᴀɴᴛʟʏ ᴡɪᴛʜᴏᴜᴛ ᴅɪsᴛᴜʀʙɪɴɢ/ᴄʟᴇᴀʀɪɴɢ ǫᴜᴇᴜᴇ.
-
-/channelplay [Cʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ɪᴅ] ᴏʀ [Dɪsᴀʙʟᴇ] - Cᴏɴɴᴇᴄᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴀ ɢʀᴏᴜᴘ ᴀɴᴅ sᴛʀᴇᴀᴍ ᴍᴜsɪᴄ ᴏɴ ᴄʜᴀɴɴᴇʟ's ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ғʀᴏᴍ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
-
-"""
