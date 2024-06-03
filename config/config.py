@@ -19,14 +19,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", "27705412"))
-API_HASH = getenv("API_HASH","46ac101f55daa167de96ac7717326684")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH","")
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN","7148513778:AAHfnJaD5jQyW0rWuskz-jamV9QKwmA8Izc")
+BOT_TOKEN = getenv("BOT_TOKEN","")
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", 'mongodb+srv://gaith:Gaith1995GG@gaith.4dxyoup.mongodb.net/')
+MONGO_DB_URI = getenv("MONGO_DB_URI", '')
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -39,10 +39,10 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001842275903"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME",'Malina Music')
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME",'Siri Music')
 
 # Your User ID.
 OWNER_ID = list(
@@ -62,10 +62,10 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # For customized or modified Repository
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://t.me/rzzrzz",
+    "https://github.com/teamsiri/skjdr",
 )
 BOT_USERNAME = getenv(
-    "BOT_USERNAME", "ra6BOT"
+    "BOT_USERNAME", ""
 )  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
