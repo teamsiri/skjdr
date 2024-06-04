@@ -161,8 +161,8 @@ def PlayWrapper(command):
                     invitelink = invitelink.replace(
                         "https://t.me/+", "https://t.me/joinchat/"
                     )
-                
-                    await asyncio.sleep(1)
+                try:
+                    await asyncio.sleep(60)
                     await userbot.join_chat(invitelink)
                 except InviteRequestSent:
                     try:
