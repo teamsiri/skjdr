@@ -71,7 +71,7 @@
         
       },
       "CHANNEL_SUDO": {
-        "description": "اكتب قناة الاشتراك الاجباري .",
+        "description": "يوزر قناتك دون @ .",
         "value": "",
         "required": true
                 
