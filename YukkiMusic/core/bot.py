@@ -20,9 +20,9 @@ from ..logging import LOGGER
 
 
 class YukkiBot(Client):
-    def init(self):
-        LOGGER(name).info(f"Starting Bot")
-        super().init(
+    def __init__(self):
+        LOGGER(__name__).info(f"Starting Bot")
+        super().__init__(
             "YukkiMusicBot",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
@@ -44,7 +44,7 @@ class YukkiBot(Client):
                 text=f"<u><b>{self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
             )
         except:
-            LOGGER(name).error(
+            LOGGER(__name__).error(
                 "Bot has failed to access the log Group. Make sure that you have added your bot to your log channel and promoted as admin!"
             )
             sys.exit()
@@ -76,10 +76,10 @@ class YukkiBot(Client):
             pass
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
         if a.status != ChatMemberStatus.ADMINISTRATOR:
-            LOGGER(name).error("Please promote Bot as Admin in Logger Group")
+            LOGGER(__name__).error("Please promote Bot as Admin in Logger Group")
             sys.exit()
         if get_me.last_name:
             self.name = get_me.first_name + " " + get_me.last_name
         else:
             self.name = get_me.first_name
-        LOGGER(name).info(f"MusicBot Started as {self.name}")
+        LOGGER(__name__).info(f"MusicBot Started as {self.name}")
