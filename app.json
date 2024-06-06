@@ -20,76 +20,91 @@
         "description": "ايبي هاش",
         "value": "",
         "required": true
+        
       },
       "BOT_USERNAME": {
         "description": "- يوزر بوتك .",
         "value": "",
         "required": true
+        
       },
       "BOT_TOKEN": {
         "description": "توكنك .",
         "value": "",
         "required": true
+        
       },
       "MONGO_DB_URI": {
         "description": "كود مونجو .",
         "value": "",
         "required": true
+        
       },
       "MUSIC_BOT_NAME": {
         "description": "اسم بوتك .",
         "value": "",
         "required": true
+        
       },
       "OWNER_ID": {
         "description": "ايدي المالك.",
         "value": "",
         "required": true
+        
       },
       "STRING_SESSION": {
         "description": "كود بايروجرام .",
         "value": "",
         "required": true
+        
       },
       "HEROKU_API_KEY": {
         "description": "ايبي هيروكو",
         "value": "",
         "required": false
+      
       },
       "HEROKU_APP_NAME": {
         "description": "اسم تطبيقك في الاعلى .",
         "value": "",
         "required": false
+        
       },
       "CHANNEL_SUDO": {
-        "description": "يوزر قناتك دون @ .",
+        "description": "اكتب قناة الاشتراك الاجباري .",
         "value": "",
-        "required": true        
+        "required": true
+                
       },
       "YAFA_NAME": {
         "description": "اسم قناة الاشتراك",
         "value": "",
         "required": true
+        
       },
       "SUDO_USER": {
         "description": "رابط يوزر مطور .",
         "value": "",
         "required": true
+        
       },
       "YAFA_CHANNEL": {
         "description": "قناة المطور ",
         "value": "",
         "required": true
+        
       },
       "SUPPORT_GROUP": {
         "description": "رابط الدعم .",
         "value": "",
         "required": true
+        
       },
       "SUPPORT_CHANNEL": {
         "description": "رابط القناة .",
         "value": "",
         "required": true
+        
       },
       "LOG_GROUP_ID": {
         "description": "ايدي كروب السجلات.",
@@ -105,7 +120,8 @@
         "description": "لاتغيرها .",
         "value": "master",
         "required": true
-      },
+      }
+    },
     "buildpacks": [
           {
               "url": "heroku/python"
