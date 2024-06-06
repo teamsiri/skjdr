@@ -9,7 +9,7 @@
 #
 
 import sys
-from import config LOG_GROUP_ID
+from config import LOG_GROUP_ID
 from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import BotCommand
