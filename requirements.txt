@@ -12,7 +12,6 @@ google_play_scraper #for playstore app search
 hachoir
 httpx[http2]
 heroku3
-img2pdf
 lyricsgenius
 motor
 pyfiglet
