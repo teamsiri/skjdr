@@ -9,7 +9,7 @@
 #
 
 import sys
-from config import LOG_GROUP_ID
+
 from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import BotCommand
@@ -28,7 +28,6 @@ class YukkiBot(Client):
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
             workdir="datafiles",
-            max_concurrent_transmissions=7,
         )
 
     async def start(self):
@@ -40,7 +39,8 @@ class YukkiBot(Client):
         self.mention = self.me.mention
 
         try:
-            await self.send_message(LOG_GROUP_ID,
+            await self.send_message(
+                config.LOG_GROUP_ID,
                 text=f"<u><b>{self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
             )
         except:
@@ -74,7 +74,7 @@ class YukkiBot(Client):
                 pass
         else:
             pass
-        a = await self.get_chat_member(LOG_GROUP_ID, self.id)
+        a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
         if a.status != ChatMemberStatus.ADMINISTRATOR:
             LOGGER(name).error("Please promote Bot as Admin in Logger Group")
             sys.exit()
