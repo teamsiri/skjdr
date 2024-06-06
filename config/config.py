@@ -49,7 +49,7 @@ OWNER_ID = list(
     map(int, getenv("OWNER_ID", None).split())
 )
 
-OWNER = int(os.getenv("OWNER", None))
+OWNER = int(os.getenv("OWNER", "375338925"))
 
   # Input type must be interger
 
