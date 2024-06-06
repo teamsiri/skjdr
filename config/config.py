@@ -19,14 +19,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH","")
+API_ID = int(getenv("API_ID", None))
+API_HASH = getenv("API_HASH", None)
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN","")
+BOT_TOKEN = getenv("BOT_TOKEN", None)
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", '')
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -42,14 +42,14 @@ SONG_DOWNLOAD_DURATION = int(
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", None))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME",None)
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", None)
 
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "5277936711").split())
+    map(int, getenv("OWNER_ID", None).split())
 )
 
-OWNER = int(os.getenv("OWNER", "5277936711"))
+OWNER = int(os.getenv("OWNER", None))
 
   # Input type must be interger
 
@@ -65,7 +65,7 @@ UPSTREAM_REPO = getenv(
     "https://github.com/teamsiri/siri",
 )
 BOT_USERNAME = getenv(
-    "BOT_USERNAME", ""
+    "BOT_USERNAME", None
 )  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
@@ -73,22 +73,22 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 # Only  Links formats are  accepted for this Var value.
 CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", "SourceSiri"
+    "CHANNEL_SUDO", None
 )  # معرف قناتك بدون @
 YAFA_NAME = getenv(
-    "YAFA_NAME", "💿┇Source Siri ."
+    "YAFA_NAME", None
 )  # اسم قناتك
 YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", "https://t.me/SourceSiri"
+   " YAFA_CHANNEL", None
 )  # رابط قناتك
 SUDO_USER =getenv(
-    "SUDO_USER", "https://t.me/rzzrzz"
+    "SUDO_USER", None
 )  # رابط حسابك
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/SourceSiri"
+    "SUPPORT_CHANNEL", None
 )  # رابط قناتك
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/SourceSiri"
+    "SUPPORT_GROUP", None
 )  # رابط كروبك
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
@@ -376,4 +376,3 @@ if not MUSIC_BOT_NAME.isascii():
         "[ERROR] - You've defined MUSIC_BOT_NAME wrong. Please don't use any special characters or Special font for this... Keep it simple and small."
     )
     sys.exit()
-
