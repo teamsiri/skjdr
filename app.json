@@ -62,6 +62,12 @@
         "description": "ايبي هيروكو",
         "value": "",
         "required": false
+      
+      },
+      "HEROKU_APP_NAME": {
+        "description": "اسم تطبيقك في الاعلى .",
+        "value": "",
+        "required": false
         
       },
       "CHANNEL_SUDO": {
