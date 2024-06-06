@@ -11,17 +11,6 @@
     ],
     "stack": "container",
     "env": {
-      "API_ID": {
-        "description": "ايبي ايدي",
-        "value": "",
-        "required": true
-      },
-      "API_HASH": {
-        "description": "ايبي هاش",
-        "value": "",
-        "required": true
-        
-      },
       "BOT_USERNAME": {
         "description": "- يوزر بوتك .",
         "value": "",
