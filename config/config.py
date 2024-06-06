@@ -19,14 +19,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID","23528501"))
+API_ID = int(getenv("API_ID", "23528501"))
 API_HASH = getenv("API_HASH","1ca51d6c53beab0b09a844cd6035a4bd")
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", None)
+BOT_TOKEN = getenv("BOT_TOKEN","5020646439:AAGwUMy1sudCBtramNtteuCo5uENlWjYQZI")
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("MONGO_DB_URI", 'mongodb+srv://gaith:Gaith1995GG@gaith.4dxyoup.mongodb.net/')
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -39,17 +39,17 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002067186691"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001842275903"))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", None)
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME",'Siri Music')
 
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", None).split())
+    map(int, getenv("OWNER_ID", "5277936711").split())
 )
 
-OWNER = int(os.getenv("OWNER", "375338925"))
+OWNER = int(os.getenv("OWNER", "5277936711"))
 
   # Input type must be interger
 
@@ -65,7 +65,7 @@ UPSTREAM_REPO = getenv(
     "https://github.com/teamsiri/siri",
 )
 BOT_USERNAME = getenv(
-    "BOT_USERNAME", None
+    "BOT_USERNAME", "zr3bot"
 )  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
@@ -73,22 +73,22 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 # Only  Links formats are  accepted for this Var value.
 CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", None
+    "CHANNEL_SUDO", "SourceSiri"
 )  # معرف قناتك بدون @
 YAFA_NAME = getenv(
-    "YAFA_NAME", None
+    "YAFA_NAME", "💿┇Source Siri ."
 )  # اسم قناتك
 YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", None
+   " YAFA_CHANNEL", "https://t.me/SourceSiri"
 )  # رابط قناتك
 SUDO_USER =getenv(
-    "SUDO_USER", None
+    "SUDO_USER", "https://t.me/rzzrzz"
 )  # رابط حسابك
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", None
+    "SUPPORT_CHANNEL", "https://t.me/SourceSiri"
 )  # رابط قناتك
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", None
+    "SUPPORT_GROUP", "https://t.me/SourceSiri"
 )  # رابط كروبك
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
@@ -158,7 +158,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION", "AgFnBDUAu0jeujKSaTiZx2qPoNOMqVkTr8ERfTIaF3s9nkRjeaeUPzl4JtbuWNa9iT_eUD-ij9cS8SIjYSvktE8u_cOvzIa6zDDK-B2sKXOXb2kUkyKyK2ZkcR3kNMsbsP-3Ns7q9mlaAqdN8fbT0Mxg7F3tadQ4dZymdwKDdW3JxubeCyd9aeZrqMBPX6BdPWhYwML4bml7hp_UTbmVONU6otBKH1PuZb4sMSZxNSw4MfetadzefNaibCUhtdeO7HOrRkiEwajzWhtZEK1B9G4Mwdr-P5KuUXo6XgrKVTT2xDwhguVD_oZtq4uif7T40cDipMe9gatUxHe6JFG4289qfLCvnwAAAAGMk0sqAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -376,3 +376,4 @@ if not MUSIC_BOT_NAME.isascii():
         "[ERROR] - You've defined MUSIC_BOT_NAME wrong. Please don't use any special characters or Special font for this... Keep it simple and small."
     )
     sys.exit()
+
