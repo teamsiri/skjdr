@@ -6,13 +6,18 @@ dnspython==2.3.0
 ffmpeg-python
 gitpython
 gTTS
+googletrans
 googlesearch-python
 google_play_scraper #for playstore app search 
 hachoir
 httpx[http2]
 heroku3
+img2pdf
 lyricsgenius
+lexica-api
+MukeshAPI
 motor
+pillow==9.5.0
 pyfiglet
 opencv-python-headless==4.9.0.80
 profanity
