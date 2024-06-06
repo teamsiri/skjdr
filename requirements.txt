@@ -6,7 +6,6 @@ dnspython==2.3.0
 ffmpeg-python
 gitpython
 gTTS
-googletrans
 googlesearch-python
 google_play_scraper #for playstore app search 
 hachoir
