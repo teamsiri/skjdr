@@ -19,14 +19,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", "23528501"))
-API_HASH = getenv("API_HASH","1ca51d6c53beab0b09a844cd6035a4bd")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH","")
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN","5020646439:AAGwUMy1sudCBtramNtteuCo5uENlWjYQZI")
+BOT_TOKEN = getenv("BOT_TOKEN","")
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", 'mongodb+srv://gaith:Gaith1995GG@gaith.4dxyoup.mongodb.net/')
+MONGO_DB_URI = getenv("MONGO_DB_URI", '')
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -65,7 +65,7 @@ UPSTREAM_REPO = getenv(
     "https://github.com/teamsiri/siri",
 )
 BOT_USERNAME = getenv(
-    "BOT_USERNAME", "zr3bot"
+    "BOT_USERNAME", ""
 )  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
