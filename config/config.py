@@ -19,14 +19,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH","")
+API_ID = int(getenv("API_ID", "27705412"))
+API_HASH = getenv("API_HASH","46ac101f55daa167de96ac7717326684")
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN","")
+BOT_TOKEN = getenv("BOT_TOKEN","7148513778:AAEfuR7Ok-d1bnHOYeQe7iXpORZDlXpLOwk")
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", '')
+MONGO_DB_URI = getenv("MONGO_DB_URI", 'mongodb+srv://gaith:Gaith1995GG@gaith.4dxyoup.mongodb.net/')
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -65,7 +65,7 @@ UPSTREAM_REPO = getenv(
     "https://github.com/teamsiri/siri",
 )
 BOT_USERNAME = getenv(
-    "BOT_USERNAME", ""
+    "BOT_USERNAME", "ra6BOT"
 )  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
@@ -376,4 +376,3 @@ if not MUSIC_BOT_NAME.isascii():
         "[ERROR] - You've defined MUSIC_BOT_NAME wrong. Please don't use any special characters or Special font for this... Keep it simple and small."
     )
     sys.exit()
-
