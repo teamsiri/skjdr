@@ -1,25 +1,21 @@
-#
-# Copyright (C) 2023-2024 by YukkiOwner@Github, < https://github.com/YukkiOwner >.
-#
-# This file is part of < https://github.com/YukkiOwner/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/YukkiOwner/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import re
 import sys
 import os
 from os import getenv
-
 from dotenv import load_dotenv
 from pyrogram import filters
 
 load_dotenv()
 
+def get_env_int(var_name, default=None):
+    try:
+        return int(getenv(var_name, default))
+    except ValueError:
+        print(f"Invalid value for {var_name}. It must be an integer.")
+        sys.exit(1)
+
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID"))
+API_ID = get_env_int("API_ID")
 API_HASH = getenv("API_HASH")
 
 ## Get it from @Botfather in Telegram.
@@ -29,29 +25,21 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
-DURATION_LIMIT_MIN = int(
-    getenv("DURATION_LIMIT", "60")
-)  # Remember to give value in Minutes
+DURATION_LIMIT_MIN = get_env_int("DURATION_LIMIT", "60")  # Remember to give value in Minutes
 
 # Duration Limit for downloading Songs in MP3 or MP4 format from bot
-SONG_DOWNLOAD_DURATION = int(
-    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
-)  # Remember to give value in Minutes
+SONG_DOWNLOAD_DURATION = get_env_int("SONG_DOWNLOAD_DURATION_LIMIT", "180")  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
+LOG_GROUP_ID = get_env_int("LOG_GROUP_ID")
 
 # A name for your Music bot.
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
 
 # Your User ID.
-OWNER_ID = list(
-    map(int, getenv("OWNER_ID").split())
-)
+OWNER_ID = list(map(int, getenv("OWNER_ID").split()))
 
-OWNER = int(os.getenv("OWNER", "5277936711"))
-
-  # Input type must be interger
+OWNER = get_env_int("OWNER", "5277936711")
 
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
@@ -60,49 +48,28 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 # For customized or modified Repository
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/teamsiri/siri",
-)
-BOT_USERNAME = getenv(
-    "BOT_USERNAME", "ra6BOT"
-)  # معرف بوتك بدون @
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/teamsiri/siri")
+BOT_USERNAME = getenv("BOT_USERNAME", "ra6BOT")  # معرف بوتك بدون @
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 # GIT TOKEN ( if your edited repo is private)
 GIT_TOKEN = getenv("GIT_TOKEN", None)
-# Only  Links formats are  accepted for this Var value.
-CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", "SourceSiri"
-)  # معرف قناتك بدون @
-YAFA_NAME = getenv(
-    "YAFA_NAME", "💿┇Source Siri ."
-)  # اسم قناتك
-YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", "https://t.me/SourceSiri"
-)  # رابط قناتك
-SUDO_USER =getenv(
-    "SUDO_USER", "https://t.me/rzzrzz"
-)  # رابط حسابك
-SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/SourceSiri"
-)  # رابط قناتك
-SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/SourceSiri"
-)  # رابط كروبك
+# Only Links formats are accepted for this Var value.
+CHANNEL_SUDO = getenv("CHANNEL_SUDO", "SourceSiri")  # معرف قناتك بدون @
+YAFA_NAME = getenv("YAFA_NAME", "💿┇Source Siri .")  # اسم قناتك
+YAFA_CHANNEL = getenv("YAFA_CHANNEL", "https://t.me/SourceSiri")  # رابط قناتك
+SUDO_USER = getenv("SUDO_USER", "https://t.me/rzzrzz")  # رابط حسابك
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/SourceSiri")  # رابط قناتك
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/SourceSiri")  # رابط كروبك
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", True)
 
 # Time after which you're assistant account will leave chats automatically.
-AUTO_LEAVE_ASSISTANT_TIME = int(
-    getenv("ASSISTANT_LEAVE_TIME", "3400")
-)  # Remember to give value in Seconds
+AUTO_LEAVE_ASSISTANT_TIME = get_env_int("ASSISTANT_LEAVE_TIME", "3400")  # Remember to give value in Seconds
 
 # Time after which bot will suggest random chats about bot commands.
-AUTO_SUGGESTION_TIME = int(
-    getenv("AUTO_SUGGESTION_TIME", "5400")
-)  # Remember to give value in Seconds
+AUTO_SUGGESTION_TIME = get_env_int("AUTO_SUGGESTION_TIME", "5400")  # Remember to give value in Seconds
 
 # Set it True if you want to delete downloads after the music playout ends from your downloads folder
 AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
@@ -114,10 +81,10 @@ AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", None)
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
 # Time sleep duration For Youtube Downloader
-YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
+YOUTUBE_DOWNLOAD_EDIT_SLEEP = get_env_int("YOUTUBE_EDIT_SLEEP", "3")
 
 # Time sleep duration For Telegram Downloader
-TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
+TELEGRAM_DOWNLOAD_EDIT_SLEEP = get_env_int("TELEGRAM_EDIT_SLEEP", "5")
 
 # Your Github Repo.. Will be shown on /start Command
 GITHUB_REPO = getenv("GITHUB_REPO", "https://t.me/rzzrzz")
@@ -127,31 +94,23 @@ SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
 # Maximum number of video calls allowed on bot. You can later set it via /set_video_limit on telegram
-VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "3"))
+VIDEO_STREAM_LIMIT = get_env_int("VIDEO_STREAM_LIMIT", "3")
 
 # Maximum Limit Allowed for users to save playlists on bot's server
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "30"))
+SERVER_PLAYLIST_LIMIT = get_env_int("SERVER_PLAYLIST_LIMIT", "30")
 
-# MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "25"))
+# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
+PLAYLIST_FETCH_LIMIT = get_env_int("PLAYLIST_FETCH_LIMIT", "25")
 
 # Cleanmode time after which bot will delete its old messages from chats
-CLEANMODE_DELETE_MINS = int(
-    getenv("CLEANMODE_MINS", "5")
-)  # Remember to give value in Seconds
+CLEANMODE_DELETE_MINS = get_env_int("CLEANMODE_MINS", "5")  # Remember to give value in Seconds
 
+# Telegram audio and video file size limit
+TG_AUDIO_FILESIZE_LIMIT = get_env_int("TG_AUDIO_FILESIZE_LIMIT", "104857600")  # Remember to give value in bytes
 
-# Telegram audio  and video file size limit
+TG_VIDEO_FILESIZE_LIMIT = get_env_int("TG_VIDEO_FILESIZE_LIMIT", "1073741824")  # Remember to give value in bytes
 
-TG_AUDIO_FILESIZE_LIMIT = int(
-    getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600")
-)  # Remember to give value in bytes
-
-TG_VIDEO_FILESIZE_LIMIT = int(
-    getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824")
-)  # Remember to give value in bytes
-
-# Chceckout https://www.gbmb.org/mb-to-bytes  for converting mb to bytes
+# Check out https://www.gbmb.org/mb-to-bytes for converting mb to bytes
 
 # If you want your bot to setup the commands automatically in the bot's menu set it to true.
 # Refer to https://i.postimg.cc/Bbg3LQTG/image.png
