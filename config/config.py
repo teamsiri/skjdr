@@ -3,7 +3,8 @@ import sys
 import os
 from os import getenv
 from dotenv import load_dotenv
-from pyrogram import filters
+from pyrogram import Client, filters
+import asyncio
 
 load_dotenv()
 
@@ -15,7 +16,7 @@ def get_env_int(var_name, default=None):
         sys.exit(1)
 
 # Get it from my.telegram.org
-API_ID = get_env_int("API_ID")
+API_ID = getenv("API_ID")
 API_HASH = getenv("API_HASH")
 
 ## Get it from @Botfather in Telegram.
@@ -122,7 +123,6 @@ STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
-
 
 #  __     ___    _ _  ___  _______   __  __ _    _  _____ _____ _____   ____   ____ _______
 #  \ \   / / |  | | |/ / |/ /_   _| |  \/  | |  | |/ ____|_   _/ ____| |  _ \ / __ \__   __|
